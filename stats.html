@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Coders | Team Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">QUANTUM<span>CODERS</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="stats.html" class="active">Stats</a>
+            <a href="#">Network</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+
+        <h1 class="dash-title">Team Dashboard</h1>
+
+        <!-- TEAM CARD -->
+        <section class="team-card glass">
+            <h2 id="team-name">Loading...</h2>
+            <p id="team-location"></p>
+            <p id="team-school"></p>
+            <p id="team-rookie"></p>
+        </section>
+
+        <!-- QUICK STATS -->
+        <section class="quickstats glass">
+            <h2>Quick Stats (2025)</h2>
+            <div class="qs-grid">
+                <div class="qs-item"><span>OPR</span><p id="opr">--</p></div>
+                <div class="qs-item"><span>DPR</span><p id="dpr">--</p></div>
+                <div class="qs-item"><span>CCWM</span><p id="ccwm">--</p></div>
+                <div class="qs-item"><span>Rank</span><p id="rank">--</p></div>
+            </div>
+        </section>
+
+        <!-- EVENTS -->
+        <section class="events glass">
+            <h2>Events (2025)</h2>
+            <div id="events-list">Loading...</div>
+        </section>
+
+        <!-- MATCHES -->
+        <section class="matches glass">
+            <h2>Matches (2025)</h2>
+            <div id="matches-list">Loading...</div>
+        </section>
+
+        <!-- AWARDS -->
+        <section class="awards glass">
+            <h2>Awards</h2>
+            <div id="awards-list">Loading...</div>
+        </section>
+
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -7,6 +7,69 @@
     --glass: rgba(255, 255, 255, 0.03);
 }
 
+.dashboard {
+    padding: 60px 8%;
+}
+
+.dash-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.glass {
+    background: var(--glass);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.team-card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.qs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.qs-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.qs-item span {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
+
+.qs-item p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+#events-list, #matches-list, #awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.event-item, .match-item, .award-item {
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
