@@ -21,7 +21,7 @@ async function fetchJSON(url) {
     console.log("🟡 STATUS:", res.status, res.statusText);
 
     if (!res.ok) {
-        console.warn("⚠️ Non-OK response, returning null");
+        console.warn("⚠️ Non-OK response, returning error");
         return { error: res.status };
     }
 
@@ -51,7 +51,7 @@ async function loadDashboard() {
 
         safeGet("team-name").textContent = `${team.number} — ${team.name}`;
         safeGet("team-location").textContent =
-            `${team.city}, ${team.state}, ${team.country}`;
+            `${team.location.city}, ${team.location.state}, ${team.location.country}`;
         safeGet("team-school").textContent = `School: ${team.schoolName}`;
         safeGet("team-rookie").textContent = `Rookie Year: ${team.rookieYear}`;
     }
@@ -79,7 +79,7 @@ async function loadDashboard() {
     }
 
     // -------------------------
-    // EVENTS (FIXED)
+    // EVENTS (OPR UNDER EVENT NAME)
     // -------------------------
     console.log("\n=== EVENTS ===");
     const events = await fetchJSON(
@@ -104,21 +104,22 @@ async function loadDashboard() {
 
             console.log("Event details:", eventDetails);
 
-            const name = eventDetails?.name ?? "Unknown Event";
-            const start = eventDetails?.startDate ?? "Unknown";
-            const end = eventDetails?.endDate ?? "Unknown";
+            const name = eventDetails?.name ?? ev.eventCode;
+
+            const eventOPR = ev.stats?.opr ?? null;
+            const oprText = eventOPR !== null ? eventOPR.toFixed(2) : "N/A";
 
             eventsList.innerHTML += `
                 <div class="event-item">
                     <strong>${name}</strong><br>
-                    ${ev.eventCode} — ${start} → ${end}
+                    ${ev.eventCode} — OPR: ${oprText}
                 </div>
             `;
         }
     }
 
     // -------------------------
-    // AWARDS
+    // AWARDS (AWARD TYPE + REAL EVENT NAME)
     // -------------------------
     console.log("\n=== AWARDS ===");
     const awards = await fetchJSON(
@@ -134,14 +135,22 @@ async function loadDashboard() {
         console.warn("⚠️ No awards found");
         awardsList.innerHTML = "No awards yet.";
     } else {
-        awards.forEach(a => {
+        for (const a of awards) {
             console.log("Award item:", a);
+
+            const eventDetails = await fetchJSON(
+                `https://api.ftcscout.org/rest/v1/events/${SEASON}/${a.eventCode}`
+            );
+
+            const eventName = eventDetails?.name ?? a.eventCode;
+
             awardsList.innerHTML += `
                 <div class="award-item">
-                    <strong>${a.type}</strong> — ${a.eventCode}
+                    <strong>${a.type}</strong><br>
+                    Event: ${eventName}
                 </div>
             `;
-        });
+        }
     }
 
     console.log("===== ✅ DASHBOARD LOAD COMPLETE =====");

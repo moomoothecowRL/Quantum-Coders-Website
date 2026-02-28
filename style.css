@@ -7,69 +7,6 @@
     --glass: rgba(255, 255, 255, 0.03);
 }
 
-.dashboard {
-    padding: 60px 8%;
-}
-
-.dash-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 40px;
-}
-
-.glass {
-    background: var(--glass);
-    padding: 30px;
-    border-radius: 16px;
-    margin-bottom: 40px;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.team-card h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.qs-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.qs-item {
-    text-align: center;
-    padding: 20px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.qs-item span {
-    color: var(--text-dim);
-    font-size: 0.8rem;
-}
-
-.qs-item p {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-top: 6px;
-}
-
-#events-list, #matches-list, #awards-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.event-item, .match-item, .award-item {
-    padding: 14px 18px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -82,9 +19,10 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    text-decoration: none;
 }
 
-/* Navbar */
+/* ── Navbar ─────────────────────────────────────────────── */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -116,11 +54,12 @@ body {
     transition: 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--text);
 }
 
-/* Hero Section */
+/* ── Hero Section ────────────────────────────────────────── */
 .hero {
     display: flex;
     align-items: center;
@@ -197,9 +136,11 @@ h1 span {
     transition: 0.3s;
 }
 
-.btn-primary:hover { box-shadow: 0 0 20px rgba(77, 89, 255, 0.4); }
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(77, 89, 255, 0.4);
+}
 
-/* Image Visual */
+/* ── Hero Visual ─────────────────────────────────────────── */
 .hero-visual {
     position: relative;
 }
@@ -210,7 +151,7 @@ h1 span {
     position: relative;
     z-index: 2;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .glow-bg {
@@ -225,7 +166,7 @@ h1 span {
     z-index: 1;
 }
 
-/* Stats Section */
+/* ── Stats Section ───────────────────────────────────────── */
 .stats {
     display: flex;
     justify-content: space-around;
@@ -243,4 +184,129 @@ h1 span {
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* ── Sponsors ────────────────────────────────────────────── */
+.sponsors-grid {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+}
+
+.sponsors-grid::-webkit-scrollbar { height: 10px; }
+.sponsors-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+}
+
+.sponsors-grid:focus { outline: none; }
+
+.sponsor {
+    flex: 0 0 86%;
+    scroll-snap-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor figure {
+    width: 100%;
+    max-width: 480px;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.sponsor img {
+    display: block;
+    margin: 0 auto 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+.sponsor figcaption {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+@media (min-width: 800px) {
+    .sponsor { flex: 0 0 40%; }
+}
+
+@media (min-width: 1200px) {
+    .sponsor { flex: 0 0 28%; }
+    .sponsors-grid { justify-content: flex-start; }
+}
+
+/* ── Dashboard ───────────────────────────────────────────── */
+.dashboard {
+    padding: 60px 8%;
+}
+
+.dash-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.glass {
+    background: var(--glass);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.team-card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.qs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.qs-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.qs-item span {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
+
+.qs-item p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+#events-list,
+#matches-list,
+#awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.event-item,
+.match-item,
+.award-item {
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
