@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantum Coders — sponsors, events and quick stats overview for the 2025 season.">
+    <title>Quantum Coders | About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Override scrolling sponsors grid to wrap instead */
+        .sponsors-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            overflow-x: visible;
+            scroll-snap-type: none;
+        }
+
+        .sponsor {
+            flex: 1 1 200px;
+            scroll-snap-align: none;
+        }
+    </style>
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo">QUANTUM<span>CODERS</span></div>
+       <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="sponsors.html">Sponsors</a>
+            <a href="#" class="active">About Us</a>
+            <a href="donate.html">Donate</a>
+        </div>
+    </nav>
+
+    <main id="main" class="dashboard" role="main">
+
+        <h1 id="aboutustitle">Meet our Team</h1>
+        <p id="aboutus">Discover the innovative minds behind Quantum Coders. Our team consists of passionate individuals from Pearson Ranch Middle School in Round Rock ISD. Together, we strive to push the boundaries of robotics technology.</p>
+
+        <!-- ABOUT US --->
+        <section class="team-card glass" aria-labelledby="about-heading">
+            <p class="muted">We appreciate support from local and national partners.</p>
+            <ul class="sponsors-grid" aria-live="polite">
+                <li class="sponsor">
+                    <figure>
+                        <img src="img/comingsoon.avif" alt="reyansh picture" loading="lazy" width="180" height="80">
+                        <figcaption>Reyansh</figcaption></a>
+                    </figure>
+                </li>
+                <li class="sponsor">
+                    <figure>
+                        <img src="img/comingsoon.avif" alt="Nila picture" loading="lazy" width="180" height="80">
+                        <figcaption>Nila</figcaption></a>
+                    </figure>
+                </li>
+                <li class="sponsor">
+                    <figure>
+                        <img src="img/comingsoon.avif" alt="Dhruv pciture" loading="lazy" width="180" height="80">
+                        <figcaption>Dhruv</figcaption></a>
+                    </figure>
+                </li>
+                <li class="sponsor">
+                    <figure>
+                        <img src="img/comingsoon.avif" alt="Siyana pciture" loading="lazy" width="180" height="80">
+                        <figcaption>Siyana</figcaption></a>
+                    </figure>
+                </li>
+                <li class="sponsor">
+                    <figure>
+                        <img src="img/comingsoon.avif" alt="Saathvik pciture" loading="lazy" width="180" height="80">
+                        <figcaption>Saathvik</figcaption></a>
+                    </figure>
+                </li>
+                 <li class="sponsor">
+                    <figure>
+                        <img src="img/comingsoon.avif" alt="Yuni pciture" loading="lazy" width="180" height="80">
+                        <figcaption>Yuni</figcaption></a>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

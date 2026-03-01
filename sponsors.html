@@ -4,31 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quantum Coders — sponsors, events and quick stats overview for the 2025 season.">
-    <title>Quantum Coders | Sponsors</title>
+    <title>Quantum Coders | About Us</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Override scrolling sponsors grid to wrap instead */
+        .sponsors-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            overflow-x: visible;
+            scroll-snap-type: none;
+        }
+
+        .sponsor {
+            flex: 1 1 200px;
+            scroll-snap-align: none;
+        }
+    </style>
 </head>
 <body>
 
     <a class="skip-link" href="#main">Skip to content</a>
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="logo">QUANTUM<span>CODERS</span></div>
-        <div class="nav-links">
+       <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="stats.html">Stats</a>
-            <a href="sponsors.html" class="active" aria-current="page">Sponsors</a>
+            <a href="#" class="active">Sponsors</a>
             <a href="about.html">About Us</a>
+            <a href="donate.html">Donate</a>
         </div>
     </nav>
 
     <main id="main" class="dashboard" role="main">
 
-        <h1 class="dash-title">Sponsors</h1>
+        <h1 class="dash-title">Sponsorships</h1>
 
-        <!-- SPONSORS --->
-        <section class="team-card glass" aria-labelledby="sponsors-heading">
-            <h2 id="sponsors-heading">Our Sponsors</h2>
-            <p class="muted">We appreciate support from local and national partners.</p>
+        <!-- ABOUT US --->
+        <section class="team-card glass" aria-labelledby="about-heading">
+            <p class="muted">Thank you Sponsors!</p>
             <ul class="sponsors-grid" aria-live="polite">
                 <li class="sponsor">
                     <figure>
