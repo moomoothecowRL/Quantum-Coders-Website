@@ -94,6 +94,27 @@ body {
     box-shadow: 0 0 10px var(--accent);
 }
 
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background: rgba(3, 3, 6, 0.8);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.youtube {
+    width: 45.4415274463px;
+    height: 32px;
+}
+
+.instagram {
+    width: 38px;
+    height: 39.02625298329px;
+    margin-left: 10px;
+}
+
 h1 {
     font-size: 3.5rem;
     font-weight: 800;
